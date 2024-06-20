@@ -1,7 +1,7 @@
 -- -----------------------------------------------------------------------------------
 -- Trivia System CONFIG 
 --
--- Hosted by Aldori on Github: 
+-- Hosted by Aldori on Github: https://github.com/Aldori15/azerothcore-trivia-system
 -- -----------------------------------------------------------------------------------
 
 local ENABLE_TRIVIA_SYSTEM = false
@@ -102,8 +102,14 @@ end
 RegisterPlayerEvent(18, function(event, player, msg, Type, lang)
     for _, command in ipairs(chatCommands) do
         if msg:lower():sub(1, #command) == command then
-            local answer = msg:sub(msg:find(" ") + 1)
-            TriviaSystem:CheckAnswer(player, answer)
+            local spaceIndex = msg:find(" ")
+            if spaceIndex then
+                local answer = msg:sub(spaceIndex + 1)
+                TriviaSystem:CheckAnswer(player, answer)
+            else
+                -- Optionally send a message or just do nothing
+                player:SendBroadcastMessage("|cffe522e5Trivia:|r |cff00ff00Please provide an answer after the command.|r")
+            end
             return
         end
     end
