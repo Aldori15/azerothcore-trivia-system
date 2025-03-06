@@ -53,6 +53,15 @@ TriviaSystem = {
     totalHintCounters = {}
 }
 
+function table.contains(table, value)
+    for _, v in pairs(table) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
 -- Function to remove special characters and make case-insensitive
 function TriviaSystem:NormalizeString(str)
     return str:lower():gsub("%W", "")
