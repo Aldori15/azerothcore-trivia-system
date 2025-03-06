@@ -6,7 +6,7 @@
 local ENABLE_TRIVIA_SYSTEM = false
 
 local triviaDays = {1, 2, 3, 4, 5, 6, 7}  -- Sun(1), Mon(2), Tues(3), Wed(4), Thurs(5), Fri(6), Sat(7)
-local triviaTimes = {"00:30", "02:15", "04:00", "05:45", "07:15", "08:30", "10:00", "10:33", "12:00", "14:30", "17:00", "19:15", "22:45"}  -- Trivia session times
+local triviaTimes = {"00:30", "02:15", "04:00", "05:45", "07:15", "08:30", "10:00", "12:00", "14:30", "17:00", "19:15", "22:45"}  -- Trivia session times
 
 local questionsPerSession = 10 -- Total number of questions per Trivia session
 local questionDuration = 25  -- Time in seconds before question expires
